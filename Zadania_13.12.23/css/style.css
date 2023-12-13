@@ -1,0 +1,109 @@
+body {
+    line-height: 1; /* zobaczcie co się stanie jak zmienicie wartość tego elementu */
+    background: #e6e6e6;
+    font-family: Arial;
+    font-size: 12px;
+    width: 960px;
+    margin: auto;
+    padding: 10px;
+}
+
+#menu {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#menu ul {
+    list-style: none;  /* zobaczcie co się stanie jak zmienicie wartość tego elementu; mozliwosci: circle, square, inside, circle inside, url('<wasza sciezka>') */
+    margin: 0;
+    text-align: center;
+}
+
+#menu ul li {
+    display: inline; /* zobaczcie co się stanie jak zmienicie wartość tego elementu (np. na block) */
+    position: relative; /* zobaczcie co się stanie jak zmienicie wartość tego elementu (np. na absolute) */
+
+    /* demo: https://developer.mozilla.org/en-US/docs/Web/CSS/position */
+}
+
+#menu ul li a {
+    border-right: 1px #555 solid; /* znajdźcie jaka wartość może wystąpić zamiast solid, wypróbujcie */
+    color: #0E318F;
+    padding: 0 15px;
+    line-height: 38px;
+    text-decoration: none; /* znajdźcie inne możliwe dekoracje */
+}
+
+#menu ul li a:hover {
+    text-decoration: underline;
+    color: #124878;
+}
+
+#banner {
+    background-color: #333;
+    background-image: url('../img/zdjecie1.jpg');
+    background-position: center;
+    background-repeat: no-repeat; /* zobaczcie co się stanie jak zmienicie wartość tego elementu */
+    background-size: cover; /* zobaczcie co się stanie jak zmienicie wartość tego elementu */
+    width: 100%;
+    height: 350px;
+}
+
+#banner h1 {
+    background-color: rgba(18,72,120, 0.8);
+    color: #fff;
+    padding: 0 5rem;
+    position: absolute;
+    top: 8rem; 
+    left: 25rem;
+}
+
+section {
+    width: 100%; /* zobaczcie co się stanie jak zmienicie wartość tego elementu */
+    display: inline-block;
+}
+
+hr {
+    margin: 20px;
+}
+
+#content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    float: left;
+    font-size: 14px;
+    line-height: 1.2em;
+}
+
+
+/* dla następnych dwóch dodajcie odpowiedni margines lub padding, tak aby strona wyglądała lepiej */
+#content p {
+    padding-left: 20px;
+}
+
+#content-images {
+    text-align: right; /* zobaczcie co się stanie jak zmienicie wartość tego elementu */
+}
+
+footer {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+#map {
+      margin-top: 25px;
+      text-align: center;
+}
+
+/* dodajcie edycję elementów listy ze znacznika section, tak aby były ułożone koło siebie (jak w menu) 
+Czyli żeby wyglądały tak:
+nr tel.: 123-456-789        e-mail: abcd@strona.pl          adres: ........
+
+- dla chętnych: spróbujcie dodać pionowe kreski pomiędzy kolenymi elementami edytując element border
+Czyli żeby wyglądało tak:
+nr tel.: 123-456-789    |   e-mail: abcd@strona.pl    |   adres: ........
+*/
