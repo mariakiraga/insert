@@ -28,7 +28,13 @@ document.addEventListener('keyup', keyUp, false);
 
 
 
-
+var zbite = [];
+for(var i = 0; i<kolumny; i++){
+    zbite[i] = [];
+    for(var j=0; j<wiersze; j++){
+        zbite[i][j] = 6;
+    }
+}
 
 
 
@@ -50,7 +56,7 @@ var yp = 550;
 var xp = 310;
 function drawPad() {
     ctx.beginPath();
-    ctx.rect(xp, yp, 80, 20);
+    ctx.rect(xp, yp, 100, 20);
     ctx.fillStyle = "black";
     ctx.fill();
     ctx.closePath();
@@ -99,6 +105,31 @@ function moveBall() {
 
 }
 
+
+function zderzenie() {
+    for(var i=0; i<kolumny; i++) {
+        for(var j=0; j<wiersze;j++) {
+            var brick = bricks[i][j];
+            if(zbite[i][j] == 6) {
+                if(xb > brick.x && xb < brick.x + 80) {
+                    if(yb + 20 > brick.y && yb - 20 < brick.y+20) {
+                        ky = -ky;
+                        zbite[i][j] = 0;
+                    }
+                }
+                if( yb > brick.y && yb < brick.y + 20) {
+                    if(xb + 20 > brick.x &&  xb - 20 < brick.x + 80) {
+                        kx = -kx;
+                        zbite[i][j] = 0;
+                    }
+                }
+
+            }
+        }
+    }
+    //
+}
+
 var bricks = []
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -111,7 +142,9 @@ function draw() {
             x = i * 62 + 20;
             y = j * 22;
             bricks[i][j] = new Brick(x,y);
-            drawBrick(bricks[i][j]);
+            if(zbite[i][j]==6){
+                drawBrick(bricks[i][j]);
+            }
         }
 
 
@@ -119,6 +152,7 @@ function draw() {
 
     drawPad();
     drawBall();
+    zderzenie();
     movePad();
     moveBall();
 }
